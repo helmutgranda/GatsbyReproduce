@@ -5,7 +5,7 @@ import Octokit from '@octokit/rest';
 /*
  * Local Import
  */
-import config from '../../config';
+// import config from 'src/config';
 
 /*
  * Code
@@ -24,19 +24,18 @@ const githubApi = new Octokit({
  * @param  {String} username
  * @return {Object}
  */
-const getContributorFromGithub = username => {
+const getContributorFromGithub = username =>
   // githubApi.authenticate({
   //   type: 'oauth',
   //   token: config.GITHUB_TOKEN, // @TODO
   // });
 
-  return githubApi.users.getForUser({ username }).then(({ data: user }) => ({
+  githubApi.users.getForUser({ username }).then(({ data: user }) => ({
     // Data available : https://developer.github.com/v3/users/
     avatar: user.avatar_url,
     name: user.name,
     url: user.blog,
   }));
-};
 
 export const getContributor = username => {
   let result = {};
