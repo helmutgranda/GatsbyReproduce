@@ -1,0 +1,16 @@
+# Thumbs Files
+.DS_Store
+Thumbs.db
+
+# Dependencies NPM / Yarn
+/node_modules
+/.cache
+
+# Build Compiled.
+/public
+
+# Logs
+/*.log
+
+# Config
+/config/index.js
